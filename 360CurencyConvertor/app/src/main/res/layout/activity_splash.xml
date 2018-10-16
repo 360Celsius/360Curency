@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/splashScreenBgColor"
+    tools:context=".SplashActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/splash_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/convert_img"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_euro_convert"/>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/relative_place_holder"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"/>
+
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/euro_img"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="50dp"
+            android:layout_toRightOf="@+id/relative_place_holder"
+            android:src="@drawable/euro_rounded_shape"/>
+
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/dolar_img"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="50dp"
+            android:layout_toLeftOf="@+id/relative_place_holder"
+            android:src="@drawable/dolar_rounded_shape"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
