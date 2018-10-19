@@ -9,4 +9,6 @@
 
     <color name="roundedShapeFill">#adcf7c</color>
     <color name="roundedShapeRadius">#ffffff</color>
+
+    <color name="splashScreenLoadingDots">#ffffff</color>
 </resources>
