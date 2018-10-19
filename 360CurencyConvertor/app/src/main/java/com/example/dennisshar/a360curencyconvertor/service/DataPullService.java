@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.example.dennisshar.a360curencyconvertor.BaseActivity;
 import com.example.dennisshar.a360curencyconvertor.datamodels.GeoLocationDataModel;
+import com.example.dennisshar.a360curencyconvertor.dbhelper.DatabaseHelper;
 import com.example.dennisshar.a360curencyconvertor.jsonparser.JsonParser;
 import com.example.dennisshar.a360curencyconvertor.network.NetworkHTTPConnection;
 import com.example.dennisshar.a360curencyconvertor.network.NetworkHttpAPIurlConst;
@@ -13,9 +15,10 @@ import com.example.dennisshar.a360curencyconvertor.network.NetworkHttpAPIurlCons
 public class DataPullService extends IntentService {
 
     public static final String GET_QOUTES_DATA = "GET_DATA";
-    private static NetworkHttpAPIurlConst networkHttpAPIurlConst;
-    private static NetworkHTTPConnection networkHTTPConnection;
-    private static JsonParser jSONparser;
+    private static NetworkHttpAPIurlConst networkHttpAPIurlConst = null;
+    private static NetworkHTTPConnection networkHTTPConnection = null;
+    private static JsonParser jSONparser = null;
+    private static DatabaseHelper helper = null;
 
 
     @Override
@@ -24,6 +27,7 @@ public class DataPullService extends IntentService {
         networkHTTPConnection = NetworkHTTPConnection.getInstance();
         networkHttpAPIurlConst = NetworkHttpAPIurlConst.getInstance();
         jSONparser =  JsonParser.getInstance();
+        helper = BaseActivity.helper;
 
     }
 
@@ -44,8 +48,8 @@ public class DataPullService extends IntentService {
     protected void onHandleIntent(@Nullable Intent intent) {
         if (intent.getStringExtra(DataPullServiceConsts.DATA_TYPE_KEY).equalsIgnoreCase(DataPullServiceConsts.GET_GEO_LOCATION_BY_IP)) {
             GeoLocationDataModel geoLocationDataModel = jSONparser.getParesedGeoLocationDataModel( networkHTTPConnection.getHttp(networkHttpAPIurlConst.getLocationByIpUrl()) );
+            helper.bulkGeoLocationdata(geoLocationDataModel);
 
-            
         }
 
     }

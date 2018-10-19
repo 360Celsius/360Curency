@@ -7,7 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.example.dennisshar.a360curencyconvertor.dbhelper.DatabaseHelper;
+
 public class BaseActivity extends AppCompatActivity {
+
+    public static DatabaseHelper helper = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +29,8 @@ public class BaseActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.setStatusBarColor(ContextCompat.getColor(this, R.color.statusBarColor));
         }
+
+        helper = DatabaseHelper.getInstance(getApplicationContext());
 
     }
 }

@@ -24,6 +24,13 @@
             android:name=".service.DataPullService"
             android:exported="false"/>
 
+        <provider
+            android:authorities="${applicationId}.provider"
+            android:enabled="true"
+            android:multiprocess="true"
+            android:name=".dbhelper.CurrencyConvertorProvider"
+            android:exported="true" />
+
     </application>
 
 </manifest>
