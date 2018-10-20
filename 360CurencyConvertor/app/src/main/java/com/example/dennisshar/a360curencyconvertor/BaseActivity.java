@@ -1,5 +1,6 @@
 package com.example.dennisshar.a360curencyconvertor;
 
+import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -8,10 +9,17 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.dennisshar.a360curencyconvertor.dbhelper.DatabaseHelper;
+import com.example.dennisshar.a360curencyconvertor.recivers.ResponseReceiver;
+import com.example.dennisshar.a360curencyconvertor.service.DataPullService;
+import com.example.dennisshar.a360curencyconvertor.service.DataPullServiceConsts;
 
 public class BaseActivity extends AppCompatActivity {
 
     public static DatabaseHelper helper = null;
+    private static ResponseReceiver receiver = null;
+    private static IntentFilter filter = null;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,5 +40,19 @@ public class BaseActivity extends AppCompatActivity {
 
         helper = DatabaseHelper.getInstance(getApplicationContext());
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        filter = new IntentFilter(DataPullService.GET_DATA);
+        receiver = new ResponseReceiver();
+        registerReceiver(receiver, filter);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterReceiver(receiver);
     }
 }

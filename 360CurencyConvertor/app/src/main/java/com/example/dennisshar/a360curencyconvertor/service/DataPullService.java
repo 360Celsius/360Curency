@@ -3,7 +3,6 @@ package com.example.dennisshar.a360curencyconvertor.service;
 import android.app.IntentService;
 import android.content.Intent;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import com.example.dennisshar.a360curencyconvertor.BaseActivity;
 import com.example.dennisshar.a360curencyconvertor.datamodels.GeoLocationDataModel;
@@ -14,7 +13,7 @@ import com.example.dennisshar.a360curencyconvertor.network.NetworkHttpAPIurlCons
 
 public class DataPullService extends IntentService {
 
-    public static final String GET_QOUTES_DATA = "GET_DATA";
+    public static final String GET_DATA = "GET_DATA";
     private static NetworkHttpAPIurlConst networkHttpAPIurlConst = null;
     private static NetworkHTTPConnection networkHTTPConnection = null;
     private static JsonParser jSONparser = null;
@@ -50,6 +49,10 @@ public class DataPullService extends IntentService {
             GeoLocationDataModel geoLocationDataModel = jSONparser.getParesedGeoLocationDataModel( networkHTTPConnection.getHttp(networkHttpAPIurlConst.getLocationByIpUrl()) );
             helper.bulkGeoLocationdata(geoLocationDataModel);
 
+            Intent broadcastIntent = new Intent();
+            broadcastIntent.setAction(GET_DATA);
+            broadcastIntent.putExtra(DataPullServiceConsts.DATA_TYPE_KEY, DataPullServiceConsts.GET_GEO_LOCATION_BY_IP);
+            sendBroadcast(broadcastIntent);
         }
 
     }

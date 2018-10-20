@@ -24,4 +24,10 @@ public class SplashActivity extends BaseActivity {
         msgIntent.putExtra(DataPullServiceConsts.DATA_TYPE_KEY, DataPullServiceConsts.GET_GEO_LOCATION_BY_IP);
         startService(msgIntent);
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        avi.hide();
+    }
 }

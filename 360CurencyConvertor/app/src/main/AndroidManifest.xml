@@ -15,9 +15,11 @@
         <activity android:name=".SplashActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".LiveActivity" android:screenOrientation="portrait">
         </activity>
 
         <service
@@ -30,6 +32,9 @@
             android:multiprocess="true"
             android:name=".dbhelper.CurrencyConvertorProvider"
             android:exported="true" />
+
+        <receiver android:name=".recivers.ResponseReceiver" />
+
 
     </application>
 
