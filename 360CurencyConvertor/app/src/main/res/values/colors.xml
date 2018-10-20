@@ -3,12 +3,18 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-
     <color name="splashScreenBgColor">#adcf7c</color>
     <color name="statusBarColor">#adcf7c</color>
-
     <color name="roundedShapeFill">#adcf7c</color>
     <color name="roundedShapeRadius">#ffffff</color>
 
     <color name="splashScreenLoadingDots">#ffffff</color>
+    <color name="mainScreenLoadingDots">#adcf7c</color>
+
+    <color name="actionBarBg">#adcf7c</color>
+    <color name="mainActivityFragmentFrameLayiutBg">#ffffff</color>
+
+    <color name="actionBarShadowCenterColor">#A9A9A9</color>
+    <color name="actionBarShadowEndColor">#D3D3D3</color>
+    <color name="actionBarShadowStartColor">#696969</color>
 </resources>

@@ -9,11 +9,12 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.dennisshar.a360curencyconvertor.dbhelper.DatabaseHelper;
+import com.example.dennisshar.a360curencyconvertor.interfaces.DataBaseHelperInterface;
 import com.example.dennisshar.a360curencyconvertor.recivers.ResponseReceiver;
 import com.example.dennisshar.a360curencyconvertor.service.DataPullService;
 import com.example.dennisshar.a360curencyconvertor.service.DataPullServiceConsts;
 
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends AppCompatActivity implements DataBaseHelperInterface{
 
     public static DatabaseHelper helper = null;
     private static ResponseReceiver receiver = null;
@@ -54,5 +55,10 @@ public class BaseActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         unregisterReceiver(receiver);
+    }
+
+    @Override
+    public DatabaseHelper getDataBasehelper() {
+        return helper;
     }
 }

@@ -93,6 +93,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
 
-        return null;
+        return geoLocationDataModel;
     }
 }
