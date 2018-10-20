@@ -13,11 +13,31 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="46dp"
+            android:layout_height="38dp"
             android:layout_alignParentTop="true"
             android:background="@color/actionBarBg"
             android:minHeight="?attr/actionBarSize"
-            android:titleTextColor="#ffffff"></android.support.v7.widget.Toolbar>
+            android:titleTextColor="#ffffff">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:textColor="#ffffff"
+                    android:layout_centerVertical="true"
+                    android:text="360 Currency Convertor"/>
+
+            </RelativeLayout>
+
+
+
+        </android.support.v7.widget.Toolbar>
 
         <View
             android:id="@+id/toolbar_shadow"
