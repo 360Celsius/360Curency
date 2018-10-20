@@ -14,14 +14,9 @@ public class LiveActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
         avi = new AVLoadingIndicatorView(getApplicationContext());
         avi.show();
     }
+
+
 }
