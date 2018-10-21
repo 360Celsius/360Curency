@@ -46,14 +46,17 @@ public class DataPullService extends IntentService {
     @Override
     protected void onHandleIntent(@Nullable Intent intent) {
         if (intent.getStringExtra(DataPullServiceConsts.DATA_TYPE_KEY).equalsIgnoreCase(DataPullServiceConsts.GET_GEO_LOCATION_BY_IP)) {
-            GeoLocationDataModel geoLocationDataModel = jSONparser.getParesedGeoLocationDataModel( networkHTTPConnection.getHttp(networkHttpAPIurlConst.getLocationByIpUrl()) );
+            GeoLocationDataModel geoLocationDataModel = jSONparser.getParesedGeoLocationDataModel(networkHTTPConnection.getHttp(networkHttpAPIurlConst.getLocationByIpUrl()));
             helper.bulkGeoLocationdata(geoLocationDataModel);
 
             Intent broadcastIntent = new Intent();
             broadcastIntent.setAction(GET_DATA);
             broadcastIntent.putExtra(DataPullServiceConsts.DATA_TYPE_KEY, DataPullServiceConsts.GET_GEO_LOCATION_BY_IP);
             sendBroadcast(broadcastIntent);
-        }
 
+        } else if (intent.getStringExtra(DataPullServiceConsts.DATA_TYPE_KEY).equalsIgnoreCase(DataPullServiceConsts.GET_CURRENCY_BY_COUNTRY_CODE)) {
+
+            jSONparser.getParesedGCurenncyByCountryCode( networkHTTPConnection.getHttp(networkHttpAPIurlConst.getCurrenciesByCountryCodeUrl()) );
+        }
     }
 }
