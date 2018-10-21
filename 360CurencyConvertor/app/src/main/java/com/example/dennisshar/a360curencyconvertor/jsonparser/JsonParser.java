@@ -39,6 +39,7 @@ public class JsonParser {
             reader = new JSONObject(apiGeoLocationJsaonStringResponce);
             geoLocationDataModel.setCity ( reader.has(jsonParserKeys.CITY)&&!reader.isNull(jsonParserKeys.CITY) ?  reader.getString(jsonParserKeys.CITY):""   );
             geoLocationDataModel.setCountry ( reader.has(jsonParserKeys.COUNTRY)&&!reader.isNull(jsonParserKeys.COUNTRY) ?  reader.getString(jsonParserKeys.COUNTRY):""   );
+            geoLocationDataModel.setCountryCode ( reader.has(jsonParserKeys.COUNTRY_CODE)&&!reader.isNull(jsonParserKeys.COUNTRY_CODE) ?  reader.getString(jsonParserKeys.COUNTRY_CODE):""   );
 
         } catch (Exception e) {
             e.printStackTrace();

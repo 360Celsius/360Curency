@@ -31,7 +31,7 @@ public class DataBaseHelperContract {
 
         public static final String DATABASE_TABLE_GEO_LOCATION_COLUMN_CITY = "city";
         public static final String DATABASE_TABLE_GEO_LOCATION_COLUMN_COUNTRY = "country";
-
+        public static final String DATABASE_TABLE_GEO_LOCATION_COLUMN_COUNTRY_CODE = "countryCode";
 
 
     }
@@ -41,6 +41,7 @@ public class DataBaseHelperContract {
             "CREATE TABLE " + GeoLocation.DATABASE_TABLE_GEO_LOCATION_NAME_KEY + " (" +
                     GeoLocation._ID + " INTEGER PRIMARY KEY," +
                     GeoLocation.DATABASE_TABLE_GEO_LOCATION_COLUMN_CITY + " TEXT," +
+                    GeoLocation.DATABASE_TABLE_GEO_LOCATION_COLUMN_COUNTRY_CODE + " TEXT," +
                     GeoLocation.DATABASE_TABLE_GEO_LOCATION_COLUMN_COUNTRY + " TEXT)";
 
     public static final String SQL_DELETE_ENTRIES_GEO_LOCATION =

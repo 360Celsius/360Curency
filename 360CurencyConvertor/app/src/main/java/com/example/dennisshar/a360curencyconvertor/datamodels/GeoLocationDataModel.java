@@ -4,8 +4,7 @@ public class GeoLocationDataModel {
 
     private String city = null;
     private String country = null;
-
-
+    private String countryCode = null;
 
 
     public String getCity() {
@@ -24,5 +23,11 @@ public class GeoLocationDataModel {
         this.country = country;
     }
 
+    public String getCountryCode() {
+        return countryCode;
+    }
 
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
+    }
 }

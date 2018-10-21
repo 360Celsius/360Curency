@@ -57,7 +57,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             ContentValues values = new ContentValues();
             values.put(DataBaseHelperContract.GeoLocation.DATABASE_TABLE_GEO_LOCATION_COLUMN_CITY, geoLocationDataModel.getCity());
             values.put(DataBaseHelperContract.GeoLocation.DATABASE_TABLE_GEO_LOCATION_COLUMN_COUNTRY, geoLocationDataModel.getCountry());
-
+            values.put(DataBaseHelperContract.GeoLocation.DATABASE_TABLE_GEO_LOCATION_COLUMN_COUNTRY_CODE, geoLocationDataModel.getCountryCode());
             ipInfoObjectArr[i] = values;
         }
         context.getContentResolver().bulkInsert(DataBaseHelperContract.GeoLocation.CONTENT_URI, ipInfoObjectArr);
