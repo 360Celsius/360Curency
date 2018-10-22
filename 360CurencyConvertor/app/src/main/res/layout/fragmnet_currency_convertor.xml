@@ -1,12 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Currenc COnvertor"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <TableLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:stretchColumns="0,1,2">
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="1dp"
+                android:layout_weight="1">
+
+                <include
+                    android:id="@+id/seven"
+                    layout="@layout/custom_convertor_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+
+                <include
+                    android:id="@+id/eight"
+                    layout="@layout/custom_convertor_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+                <include
+                    android:id="@+id/nine"
+                    layout="@layout/custom_convertor_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="2"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+
+
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="1dp"
+                android:layout_weight="1">
+
+                <include
+                    android:id="@+id/four"
+                    layout="@layout/custom_convertor_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+
+                <include
+                    android:id="@+id/five"
+                    layout="@layout/custom_convertor_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+                <include
+                    android:id="@+id/six"
+                    layout="@layout/custom_convertor_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="2"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="1dp"
+                android:layout_weight="1">
+
+                <include
+                    android:id="@+id/one"
+                    layout="@layout/custom_convertor_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+
+                <include
+                    android:id="@+id/two"
+                    layout="@layout/custom_convertor_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+                <include
+                    android:id="@+id/three"
+                    layout="@layout/custom_convertor_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="2"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="1dp"
+                android:layout_weight="1">
+
+                <include
+                    android:id="@+id/dot"
+                    layout="@layout/custom_convertor_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+
+                <include
+                    android:id="@+id/zero"
+                    layout="@layout/custom_convertor_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+                <include
+                    android:id="@+id/back"
+                    layout="@layout/custom_convertor_back_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_column="2"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+
+            </TableRow>
+
+
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

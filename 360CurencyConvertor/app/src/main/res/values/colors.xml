@@ -21,4 +21,7 @@
     <color name="currencyConvertorBgColor">#D3D3D3</color>
 
     <color name="adBunnerBg">#adcf7c</color>
+
+    <color name="buttonsColor">#4eb349</color>
+
 </resources>
