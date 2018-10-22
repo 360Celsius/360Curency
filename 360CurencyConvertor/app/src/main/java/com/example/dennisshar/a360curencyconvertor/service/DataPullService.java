@@ -5,11 +5,14 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 
 import com.example.dennisshar.a360curencyconvertor.BaseActivity;
+import com.example.dennisshar.a360curencyconvertor.datamodels.CurenncyByCountryCode;
 import com.example.dennisshar.a360curencyconvertor.datamodels.GeoLocationDataModel;
 import com.example.dennisshar.a360curencyconvertor.dbhelper.DatabaseHelper;
 import com.example.dennisshar.a360curencyconvertor.jsonparser.JsonParser;
 import com.example.dennisshar.a360curencyconvertor.network.NetworkHTTPConnection;
 import com.example.dennisshar.a360curencyconvertor.network.NetworkHttpAPIurlConst;
+
+import java.util.ArrayList;
 
 public class DataPullService extends IntentService {
 
@@ -56,7 +59,8 @@ public class DataPullService extends IntentService {
 
         } else if (intent.getStringExtra(DataPullServiceConsts.DATA_TYPE_KEY).equalsIgnoreCase(DataPullServiceConsts.GET_CURRENCY_BY_COUNTRY_CODE)) {
 
-            jSONparser.getParesedGCurenncyByCountryCode( networkHTTPConnection.getHttp(networkHttpAPIurlConst.getCurrenciesByCountryCodeUrl()) );
+            ArrayList<CurenncyByCountryCode> curenncyByCountryCodeArray = jSONparser.getParesedGCurenncyByCountryCode( networkHTTPConnection.getHttp(networkHttpAPIurlConst.getCurrenciesByCountryCodeUrl()) );
+            helper.bulkInsertCurrencyCodeByCountryCode(curenncyByCountryCodeArray);
         }
     }
 }

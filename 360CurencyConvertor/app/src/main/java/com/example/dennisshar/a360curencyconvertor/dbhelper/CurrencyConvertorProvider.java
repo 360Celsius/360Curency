@@ -19,11 +19,13 @@ public class CurrencyConvertorProvider extends ContentProvider {
     public static DatabaseHelper helper = null;
 
     private static final int GEO_LOCATION = 1;
+    private static final int ATES_CODE_BY_COUNTRY_CODE = 2;
 
     private static final UriMatcher mMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 
     static {
         mMatcher.addURI(DataBaseHelperContract.AUTHORITY, DataBaseHelperContract.GeoLocation.URI_SUFFIX, GEO_LOCATION);
+        mMatcher.addURI(DataBaseHelperContract.AUTHORITY, DataBaseHelperContract.RatesCodeByCountryCode.URI_SUFFIX, ATES_CODE_BY_COUNTRY_CODE);
     }
 
     @Override
@@ -76,7 +78,11 @@ public class CurrencyConvertorProvider extends ContentProvider {
 
         switch (mMatcher.match(uri)) {
             case GEO_LOCATION:
-                tableName = DataBaseHelperContract.GeoLocation.DATABASE_TABLE_GEO_LOCATION_NAME_KEY;
+                tableName = DataBaseHelperContract.GeoLocation.TABLE_NAME;
+                break;
+
+            case ATES_CODE_BY_COUNTRY_CODE:
+                tableName = DataBaseHelperContract.RatesCodeByCountryCode.TABLE_NAME;
                 break;
 
         }
@@ -90,6 +96,10 @@ public class CurrencyConvertorProvider extends ContentProvider {
         switch (mMatcher.match(uri)) {
             case GEO_LOCATION:
                 contentUriName = DataBaseHelperContract.GeoLocation.CONTENT_URI;
+                break;
+
+            case ATES_CODE_BY_COUNTRY_CODE:
+                contentUriName = DataBaseHelperContract.RatesCodeByCountryCode.CONTENT_URI;
                 break;
 
         }
