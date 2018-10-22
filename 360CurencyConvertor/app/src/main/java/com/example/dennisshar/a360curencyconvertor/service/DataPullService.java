@@ -61,6 +61,11 @@ public class DataPullService extends IntentService {
 
             ArrayList<CurenncyByCountryCode> curenncyByCountryCodeArray = jSONparser.getParesedGCurenncyByCountryCode( networkHTTPConnection.getHttp(networkHttpAPIurlConst.getCurrenciesByCountryCodeUrl()) );
             helper.bulkInsertCurrencyCodeByCountryCode(curenncyByCountryCodeArray);
+
+            Intent broadcastIntent = new Intent();
+            broadcastIntent.setAction(GET_DATA);
+            broadcastIntent.putExtra(DataPullServiceConsts.DATA_TYPE_KEY, DataPullServiceConsts.GET_CURRENCY_BY_COUNTRY_CODE);
+            sendBroadcast(broadcastIntent);
         }
     }
 }
