@@ -26,4 +26,7 @@
 
     <color name="upperConvertorScreen">#FFFFFF </color>
 
+    <color name="currencyTextColor">#000000 </color>
+
+
 </resources>

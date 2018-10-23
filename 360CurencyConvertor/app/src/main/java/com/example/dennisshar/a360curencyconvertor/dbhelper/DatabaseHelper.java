@@ -56,16 +56,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //======================================================   GEO LOCATION data   ===========================================================
 
     public void bulkGeoLocationdata(GeoLocationDataModel geoLocationDataModel){
-        deleteExternalIPdataTable();
-        ContentValues[] ipInfoObjectArr = new ContentValues[1];;
-        for(int i=0;i<ipInfoObjectArr.length;i++) {
-            ContentValues values = new ContentValues();
-            values.put(DataBaseHelperContract.GeoLocation.DATABASE_TABLE_GEO_LOCATION_COLUMN_CITY_COLUMN, geoLocationDataModel.getCity());
-            values.put(DataBaseHelperContract.GeoLocation.DATABASE_TABLE_GEO_LOCATION_COLUMN_COUNTRY_COLUMN, geoLocationDataModel.getCountry());
-            values.put(DataBaseHelperContract.GeoLocation.DATABASE_TABLE_GEO_LOCATION_COLUMN_COUNTRY_CODE_COLUMN, geoLocationDataModel.getCountryCode());
-            ipInfoObjectArr[i] = values;
+        try {
+            deleteExternalIPdataTable();
+            ContentValues[] ipInfoObjectArr = new ContentValues[1];
+            ;
+            for (int i = 0; i < ipInfoObjectArr.length; i++) {
+                ContentValues values = new ContentValues();
+                values.put(DataBaseHelperContract.GeoLocation.DATABASE_TABLE_GEO_LOCATION_COLUMN_CITY_COLUMN, geoLocationDataModel.getCity());
+                values.put(DataBaseHelperContract.GeoLocation.DATABASE_TABLE_GEO_LOCATION_COLUMN_COUNTRY_COLUMN, geoLocationDataModel.getCountry());
+                values.put(DataBaseHelperContract.GeoLocation.DATABASE_TABLE_GEO_LOCATION_COLUMN_COUNTRY_CODE_COLUMN, geoLocationDataModel.getCountryCode());
+                ipInfoObjectArr[i] = values;
+            }
+            context.getContentResolver().bulkInsert(DataBaseHelperContract.GeoLocation.CONTENT_URI, ipInfoObjectArr);
+        }catch (NullPointerException e){
+            e.printStackTrace();
         }
-        context.getContentResolver().bulkInsert(DataBaseHelperContract.GeoLocation.CONTENT_URI, ipInfoObjectArr);
     }
 
     private void deleteExternalIPdataTable(){
@@ -105,15 +110,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public void bulkInsertCurrencyCodeByCountryCode(ArrayList<CurenncyByCountryCode> curenncyByCountryCodeArray){
-        deleteCurrencyCodeByCountryCode();
-        ContentValues[] ipInfoObjectArr = new ContentValues[curenncyByCountryCodeArray.size()];;
-        for(int i=0 ; i < curenncyByCountryCodeArray.size() ;i++) {
-            ContentValues values = new ContentValues();
-            values.put(DataBaseHelperContract.RatesCodeByCountryCode.DATABASE_TABLE_RATES_CODE_BY_COUNTRY_CODE_CODE_COLUMN, curenncyByCountryCodeArray.get(i).getCode());
-            values.put(DataBaseHelperContract.RatesCodeByCountryCode.DATABASE_TABLE_RATES_CODE_BY_COUNTRY_CODE_NAME_COLUMN, curenncyByCountryCodeArray.get(i).getName());
-            ipInfoObjectArr[i] = values;
+        try {
+            deleteCurrencyCodeByCountryCode();
+            ContentValues[] ipInfoObjectArr = new ContentValues[curenncyByCountryCodeArray.size()];
+            ;
+            for (int i = 0; i < curenncyByCountryCodeArray.size(); i++) {
+                ContentValues values = new ContentValues();
+                values.put(DataBaseHelperContract.RatesCodeByCountryCode.DATABASE_TABLE_RATES_CODE_BY_COUNTRY_CODE_CODE_COLUMN, curenncyByCountryCodeArray.get(i).getCode());
+                values.put(DataBaseHelperContract.RatesCodeByCountryCode.DATABASE_TABLE_RATES_CODE_BY_COUNTRY_CODE_NAME_COLUMN, curenncyByCountryCodeArray.get(i).getName());
+                ipInfoObjectArr[i] = values;
+            }
+            context.getContentResolver().bulkInsert(DataBaseHelperContract.RatesCodeByCountryCode.CONTENT_URI, ipInfoObjectArr);
+        }catch (NullPointerException e){
+            e.printStackTrace();
         }
-        context.getContentResolver().bulkInsert(DataBaseHelperContract.RatesCodeByCountryCode.CONTENT_URI, ipInfoObjectArr);
     }
 
     private void deleteCurrencyCodeByCountryCode(){
