@@ -24,4 +24,6 @@
 
     <color name="buttonsColor">#4eb349</color>
 
+    <color name="upperConvertorScreen">#FFFFFF </color>
+
 </resources>
