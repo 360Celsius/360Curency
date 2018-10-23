@@ -68,6 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="3dp"
             android:layout_below="@+id/toolbar"
+            android:visibility="invisible"
             android:background="@drawable/action_bar_shadow"></View>
 
 
@@ -84,6 +85,7 @@
             android:id="@+id/ad_place_holder_shadow"
             android:layout_width="match_parent"
             android:layout_height="3dp"
+            android:visibility="invisible"
             android:layout_above="@+id/ad_place_holder"
             android:background="@drawable/action_bar_shadow"></View>
 
