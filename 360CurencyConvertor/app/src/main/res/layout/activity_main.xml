@@ -92,7 +92,7 @@
         <RelativeLayout
             android:id="@+id/ad_place_holder"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:layout_alignParentBottom="true"
             android:background="@color/adBunnerBg">
 

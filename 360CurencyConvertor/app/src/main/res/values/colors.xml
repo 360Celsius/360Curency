@@ -24,9 +24,13 @@
 
     <color name="buttonsColor">#4eb349</color>
 
-    <color name="convertorScreen">#FFFFFF </color>
+    <color name="convertorScreen">#FFFFFF</color>
 
-    <color name="currencyTextColor">#000000 </color>
+    <color name="currencyTextColor">#000000</color>
+
+    <color name="roundedFlagsBordelColor">#adcf7c</color>
+
+    <color name="countryCurrencyNameTextColor">#A9A9A9</color>
 
 
 </resources>

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
@@ -22,15 +23,16 @@
                     android:id="@+id/upper_currency"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="99999"
+                    android:text="9999999"
                     android:textSize="28dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginTop="12dp"
                     android:layout_marginLeft="12dp"
+                    android:layout_toLeftOf="@+id/upper_currency__short_name"
                     android:textColor="@color/currencyTextColor"/>
 
-                <android.support.v7.widget.AppCompatImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/upper_currency_flag"
                     android:layout_width="18dp"
                     android:layout_height="18dp"
@@ -38,9 +40,12 @@
                     android:layout_below="@+id/upper_currency"
                     android:layout_marginTop="6dp"
                     android:layout_marginLeft="12dp"
-                    android:src="@drawable/ad"/>
+                    android:src="@drawable/ad"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="@color/roundedFlagsBordelColor"/>
 
                 <TextView
+                    android:id="@+id/upper_currency_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
@@ -48,7 +53,21 @@
                     android:layout_toRightOf="@+id/upper_currency_flag"
                     android:layout_marginLeft="6dp"
                     android:text="Azerbaijan New Manat"
-                    android:textSize="14dp"/>
+                    android:textSize="14dp"
+                    android:textColor="@color/countryCurrencyNameTextColor"/>
+
+                <TextView
+                    android:id="@+id/upper_currency__short_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginLeft="6dp"
+                    android:text="EUR"
+                    android:textSize="14dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:textColor="@color/countryCurrencyNameTextColor"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -57,11 +76,32 @@
                 android:layout_width="fill_parent"
                 android:background="@color/convertorScreen">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="1 EUR = 0.95 USD"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/countryCurrencyNameTextColor"/>
+
                 <android.support.v7.widget.AppCompatImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerInParent="true"
                     android:src="@drawable/ic_swap_calls"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="1 EUR = 0.95 USD"
+                    android:textSize="14dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/countryCurrencyNameTextColor"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -73,15 +113,16 @@
                     android:id="@+id/buttom_currency"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="666666"
+                    android:text="6666666"
                     android:textSize="28dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginTop="12dp"
                     android:layout_marginLeft="12dp"
+                    android:layout_toLeftOf="@+id/buttom_currency_short_name"
                     android:textColor="@color/currencyTextColor"/>
 
-                <android.support.v7.widget.AppCompatImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/buttom_currency_flag"
                     android:layout_width="18dp"
                     android:layout_height="18dp"
@@ -89,9 +130,12 @@
                     android:layout_below="@+id/buttom_currency"
                     android:layout_marginTop="6dp"
                     android:layout_marginLeft="12dp"
-                    android:src="@drawable/ad"/>
+                    android:src="@drawable/ad"
+                    app:civ_border_width="1dp"
+                    app:civ_border_color="@color/roundedFlagsBordelColor"/>
 
                 <TextView
+                    android:id="@+id/buttom_currency_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
@@ -99,7 +143,22 @@
                     android:layout_toRightOf="@+id/buttom_currency_flag"
                     android:layout_marginLeft="6dp"
                     android:text="Azerbaijan New Manat"
-                    android:textSize="14dp"/>
+                    android:textSize="14dp"
+                    android:textColor="@color/countryCurrencyNameTextColor"/>
+
+
+                <TextView
+                    android:id="@+id/buttom_currency_short_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginLeft="6dp"
+                    android:text="EUR"
+                    android:textSize="14dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:textColor="@color/countryCurrencyNameTextColor"/>
             </RelativeLayout>
 
 
