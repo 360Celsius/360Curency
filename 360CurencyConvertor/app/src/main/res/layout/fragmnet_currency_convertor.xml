@@ -77,6 +77,7 @@
                 android:background="@color/convertorScreen">
 
                 <TextView
+                    android:id="@+id/left_vurrency_unit_values"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -94,6 +95,7 @@
 
 
                 <TextView
+                    android:id="@+id/right_vurrency_unit_values"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
