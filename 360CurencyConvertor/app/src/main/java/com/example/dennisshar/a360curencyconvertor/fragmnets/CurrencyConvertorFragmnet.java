@@ -60,6 +60,10 @@ public class CurrencyConvertorFragmnet extends BaseFragmnet implements View.OnCl
     private TextView upperCurrency;
     private TextView buttomCurrency;
 
+    private TextView upperCurrencyShortName;
+    private TextView buttomCurrencyShortName;
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -147,6 +151,9 @@ public class CurrencyConvertorFragmnet extends BaseFragmnet implements View.OnCl
         upperCurrency = (TextView) view.findViewById(R.id.upper_currency);
         upperCurrency = (TextView) view.findViewById(R.id.buttom_currency);
 
+        upperCurrencyShortName = (TextView) view.findViewById(R.id.upper_currency_short_name);
+        buttomCurrencyShortName = (TextView) view.findViewById(R.id.buttom_currency_short_name);
+
         return view;
     }
 
@@ -156,6 +163,9 @@ public class CurrencyConvertorFragmnet extends BaseFragmnet implements View.OnCl
         super.onViewCreated(view, savedInstanceState);
         avInterface.getAVLoadingIndicatorView().hide();
 
+        mCallback.getDataBasehelper().getGeoLocationdata();
+        //upperCurrencyShortName.setText();
+        //buttomCurrencyShortName.setText();
     }
 
     @Override

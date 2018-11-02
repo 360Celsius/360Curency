@@ -93,7 +93,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         GeoLocationDataModel geoLocationDataModel = new GeoLocationDataModel();
         try {
             if (cursor.moveToFirst()) {
-                //cursor.getString(cursor.getColumnIndex(DataBaseHelperContract.GeoLocation.TABLE_NAME));
+                cursor.getString(cursor.getColumnIndex(DataBaseHelperContract.GeoLocation.TABLE_NAME));
             }
         }catch (Exception e){
             e.printStackTrace();;
