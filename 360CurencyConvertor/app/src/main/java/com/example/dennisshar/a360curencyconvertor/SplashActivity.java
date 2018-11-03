@@ -9,7 +9,7 @@ import com.wang.avi.AVLoadingIndicatorView;
 
 public class SplashActivity extends BaseActivity {
 
-    AVLoadingIndicatorView splashActivityLoadingView;
+    private AVLoadingIndicatorView splashActivityLoadingView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
